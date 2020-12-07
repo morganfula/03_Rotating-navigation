@@ -64,12 +64,20 @@ body {
 
         &#open {
           left: 60%;
+          cursor: pointer;
         }
 
         &#close {
           top: 60%;
+          transform: rotate(90deg);
+          transform-origin: top left;
+          cursor: pointer;
         }
       }
     }
   }
+}
+
+.content {
+  max-width: 100%;
 }
