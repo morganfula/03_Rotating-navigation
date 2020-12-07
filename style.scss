@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+$primary-color: #333;
+$primary-color-dark: #222;
+$secondary-color: #fe7541;
+
+$white: #fafafa;
+
+// transitions
+
+$transition-1: transform 0.5s linear;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: $primary-color;
+  color: $primary-color-dark;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 60px;
+  background-color: $white;
+  transform-origin: top left;
+  transition: $transition-1;
+
+  &.show-nav {
+    transform: rotate(-20deg);
+  }
+
+  &__circle {
+    position: fixed;
+    top: -100px;
+    left: -100px;
+
+    .circle {
+      background-color: $secondary-color;
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+      position: relative;
+      transition: $transition-1;
+
+      button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 100px;
+        background: transparent;
+        border: 0;
+        font-size: 26px;
+        color: $white;
+
+        &:focus {
+          outline: none;
+        }
+
+        &#open {
+          left: 60%;
+        }
+
+        &#close {
+          top: 60%;
+        }
+      }
+    }
+  }
+}
